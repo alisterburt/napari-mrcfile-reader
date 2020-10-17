@@ -9,7 +9,7 @@
 Read MRC format image files into napari using the [mrcfile] package from [CCP-EM]
 
 ----------------------------------
-![](example.gif)
+![example usage](example.gif)
 ----------------------------------
 
 This [napari] plugin was generated with [Cookiecutter] using with [@napari]'s [cookiecutter-napari-plugin] template.
