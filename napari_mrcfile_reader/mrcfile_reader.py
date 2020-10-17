@@ -1,9 +1,8 @@
 """
-This module is an example of a barebones numpy reader plugin for napari.
+This module is an mrc file reader plugin for napari.
 
-It implements the ``napari_get_reader`` hook specification, (to create
-a reader plugin) but your plugin may choose to implement any of the hook
-specifications offered by napari.
+It implements the ``napari_get_reader`` hook specification to create
+a reader plugin.
 see: https://napari.org/docs/plugins/hook_specifications.html
 
 Replace code below accordingly.  For complete documentation see:
@@ -11,6 +10,7 @@ https://napari.org/docs/plugins/for_plugin_developers.html
 """
 import numpy as np
 from napari_plugin_engine import napari_hook_implementation
+from mrcfile import open
 
 
 @napari_hook_implementation
@@ -35,7 +35,7 @@ def napari_get_reader(path):
         path = path[0]
 
     # if we know we cannot read the file, we immediately return None.
-    if not path.endswith(".npy"):
+    if not path.endswith(".mrc"):
         return None
 
     # otherwise we return the *function* that can read ``path``.
@@ -67,7 +67,7 @@ def reader_function(path):
     # handle both a string and a list of strings
     paths = [path] if isinstance(path, str) else path
     # load all files into array
-    arrays = [np.load(_path) for _path in paths]
+    arrays = [open(_path).data for _path in paths]
     # stack arrays into single array
     data = np.squeeze(np.stack(arrays))
 

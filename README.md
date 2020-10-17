@@ -6,19 +6,12 @@
 [![tests](https://github.com/alisterburt/napari-mrcfile-reader/workflows/tests/badge.svg)](https://github.com/alisterburt/napari-mrcfile-reader/actions)
 [![codecov](https://codecov.io/gh/alisterburt/napari-mrcfile-reader/branch/master/graph/badge.svg)](https://codecov.io/gh/alisterburt/napari-mrcfile-reader)
 
-read MRC format image files into napari
+Read MRC format image files into napari using the [mrcfile] package from [CCP-EM]
 
 ----------------------------------
 
 This [napari] plugin was generated with [Cookiecutter] using with [@napari]'s [cookiecutter-napari-plugin] template.
 
-<!--
-Don't miss the full getting started guide to set up your new package:
-https://github.com/napari/cookiecutter-napari-plugin#getting-started
-
-and review the napari docs for plugin developers:
-https://napari.org/docs/plugins/index.html
--->
 
 ## Installation
 
@@ -39,7 +32,8 @@ Distributed under the terms of the [BSD-3] license,
 ## Issues
 
 If you encounter any problems, please [file an issue] along with a detailed description.
-
+[CCP-EM]: https://www.ccpem.ac.uk/
+[mrcfile]: https://github.com/ccpem/mrcfile
 [napari]: https://github.com/napari/napari
 [Cookiecutter]: https://github.com/audreyr/cookiecutter
 [@napari]: https://github.com/napari

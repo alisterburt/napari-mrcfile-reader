@@ -1,15 +1,14 @@
 import numpy as np
+import mrcfile
 from napari_mrcfile_reader import napari_get_reader
 
 
 # tmp_path is a pytest fixture
 def test_reader(tmp_path):
-    """An example of how you might test your plugin."""
-
-    # write some fake data using your supported file format
-    my_test_file = str(tmp_path / "myfile.npy")
-    original_data = np.random.rand(20, 20)
-    np.save(my_test_file, original_data)
+    # write a fake MRC file using mrcfile
+    my_test_file = str(tmp_path / "myfile.mrc")
+    original_data = np.random.rand(20, 20).astype(np.float32)
+    mrcfile.new(my_test_file, original_data)
 
     # try to read it back in
     reader = napari_get_reader(my_test_file)

@@ -1,2 +1,3 @@
 napari-plugin-engine>=0.1.4
-numpy
+numpy>=1.18
+mrcfile>=1.1
