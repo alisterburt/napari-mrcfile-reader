@@ -1,6 +1,6 @@
 # napari-mrcfile-reader
 
-[![License](https://img.shields.io/pypi/l/napari-mrcfile-reader.svg?color=green)](https://github.com/napari/napari-mrcfile-reader/raw/master/LICENSE)
+[![License](https://img.shields.io/pypi/l/napari-mrcfile-reader.svg?color=green)](https://github.com/alisterburt/napari-mrcfile-reader/raw/master/LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/napari-mrcfile-reader.svg?color=green)](https://pypi.org/project/napari-mrcfile-reader)
 [![Python Version](https://img.shields.io/pypi/pyversions/napari-mrcfile-reader.svg?color=green)](https://python.org)
 [![tests](https://github.com/alisterburt/napari-mrcfile-reader/workflows/tests/badge.svg)](https://github.com/alisterburt/napari-mrcfile-reader/actions)
