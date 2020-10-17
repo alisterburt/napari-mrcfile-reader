@@ -8,6 +8,7 @@
 
 Read MRC format image files into napari using the [mrcfile] package from [CCP-EM]
 
+----------------------------------
 ![](example.gif)
 ----------------------------------
 
