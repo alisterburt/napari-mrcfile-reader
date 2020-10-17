@@ -7,6 +7,7 @@
 [![codecov](https://codecov.io/gh/alisterburt/napari-mrcfile-reader/branch/master/graph/badge.svg)](https://codecov.io/gh/alisterburt/napari-mrcfile-reader)
 
 Read MRC format image files into napari using the [mrcfile] package from [CCP-EM]
+
 ![](example.gif)
 ----------------------------------
 
