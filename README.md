@@ -7,7 +7,7 @@
 [![codecov](https://codecov.io/gh/alisterburt/napari-mrcfile-reader/branch/master/graph/badge.svg)](https://codecov.io/gh/alisterburt/napari-mrcfile-reader)
 
 Read MRC format image files into napari using the [mrcfile] package from [CCP-EM]
-
+![](example.gif)
 ----------------------------------
 
 This [napari] plugin was generated with [Cookiecutter] using with [@napari]'s [cookiecutter-napari-plugin] template.
@@ -32,6 +32,8 @@ Distributed under the terms of the [BSD-3] license,
 ## Issues
 
 If you encounter any problems, please [file an issue] along with a detailed description.
+
+
 [CCP-EM]: https://www.ccpem.ac.uk/
 [mrcfile]: https://github.com/ccpem/mrcfile
 [napari]: https://github.com/napari/napari
