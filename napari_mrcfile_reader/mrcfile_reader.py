@@ -10,7 +10,7 @@ https://napari.org/docs/plugins/for_plugin_developers.html
 """
 import numpy as np
 from napari_plugin_engine import napari_hook_implementation
-from mrcfile import open
+import mrcfile
 
 
 @napari_hook_implementation
@@ -68,7 +68,7 @@ def reader_function(path):
     # handle both a string and a list of strings
     paths = [path] if isinstance(path, str) else path
     # load all files into array
-    arrays = [open(_path).data for _path in paths]
+    arrays = [mrcfile.open(_path).data for _path in paths]
     # stack arrays into single array
     data = np.squeeze(np.stack(arrays))
 
