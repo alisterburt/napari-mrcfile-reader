@@ -68,7 +68,7 @@ def reader_function(path):
     # handle both a string and a list of strings
     paths = [path] if isinstance(path, str) else path
     # load all files into array
-    arrays = [mrcfile.open(_path).data for _path in paths]
+    arrays = [mrcfile.open(_path, permissive=True).data for _path in paths]
     # stack arrays into single array
     data = np.squeeze(np.stack(arrays))
 
