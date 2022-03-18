@@ -67,14 +67,26 @@ def reader_function(path):
     """
     # handle both a string and a list of strings
     paths = [path] if isinstance(path, str) else path
-    # load all files into array
-    arrays = [mrcfile.open(_path, permissive=True).data for _path in paths]
-    # stack arrays into single array
-    data = np.squeeze(np.stack(arrays))
 
     # optional kwargs for the corresponding viewer.add_* method
     # https://napari.org/docs/api/napari.components.html#module-napari.components.add_layers_mixin
     add_kwargs = {}
 
-    layer_type = "image"  # optional, default is "image"
-    return [(data, add_kwargs, layer_type)]
+    # optional, default is "image"
+    layer_type = "image"
+
+    # load all files into array
+    layer_data = []
+    for _path in paths:
+
+        # Read mrcfile as a memory mapped file
+        data = mrcfile.mmap(_path, permissive=True).data
+
+        # Append two layers if the data type is complex
+        if data.dtype in [np.complex64, np.complex128]:
+            layer_data.append((np.abs(data), {"name": "amplitude"}, layer_type))
+            layer_data.append((np.angle(data), {"name": "phase"}, layer_type))
+        else:
+            layer_data.append((data, add_kwargs, layer_type))
+
+    return layer_data
