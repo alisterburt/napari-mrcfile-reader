@@ -31,13 +31,13 @@ def napari_get_reader(path):
 
     # if we know we cannot read the file, we immediately return None.
     extensions = (
-        '*.mrc',
-        '*.mrcs',
-        '*.map',
-        '*.st',
-        '*.rec',
-        '*.preali',
-        '*.ali',
+        '.mrc',
+        '.mrcs',
+        '.map',
+        '.st',
+        '.rec',
+        '.preali',
+        '.ali',
     )
     if not path.endswith(extensions):
         return None
