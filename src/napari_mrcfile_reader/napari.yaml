@@ -1,0 +1,19 @@
+name: napari-mrcfile-reader
+display_name: napari-mrcfile-reader
+contributions:
+  commands:
+    - id: napari-mrcfile-reader.get_reader
+      python_name: napari_mrcfile_reader._reader:napari_get_reader
+      title: Open data with napari-mrcfile-reader
+  readers:
+    - command: napari-mrcfile-reader.get_reader
+      accepts_directories: false
+      filename_patterns: [
+        '*.mrc',
+        '*.mrcs',
+        '*.map',
+        '*.st',
+        '*.rec',
+        '*.preali',
+        '*.ali',
+      ]

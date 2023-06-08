@@ -1,21 +1,16 @@
 """
-This module is an mrc file reader plugin for napari.
+This module is an example of a barebones numpy reader plugin for napari.
 
-It implements the ``napari_get_reader`` hook specification to create
-a reader plugin.
-see: https://napari.org/docs/plugins/hook_specifications.html
-
-Replace code below accordingly.  For complete documentation see:
-https://napari.org/docs/plugins/for_plugin_developers.html
+It implements the Reader specification, but your plugin may choose to
+implement multiple readers or even other plugin contributions. see:
+https://napari.org/stable/plugins/guides.html?#readers
 """
-import numpy as np
-from napari_plugin_engine import napari_hook_implementation
 import mrcfile
+import numpy as np
 
 
-@napari_hook_implementation
 def napari_get_reader(path):
-    """A basic implementation of the napari_get_reader hook specification.
+    """A basic implementation of a Reader contribution.
 
     Parameters
     ----------
@@ -35,7 +30,15 @@ def napari_get_reader(path):
         path = path[0]
 
     # if we know we cannot read the file, we immediately return None.
-    extensions = ".mrc", ".mrcs", ".map"
+    extensions = (
+        '.mrc',
+        '.mrcs',
+        '.map',
+        '.st',
+        '.rec',
+        '.preali',
+        '.ali',
+    )
     if not path.endswith(extensions):
         return None
 
